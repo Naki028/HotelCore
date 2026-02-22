@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HotelCore.API\HotelCore.API.csproj" />
+    <ProjectReference Include="..\HotelCore.Application\HotelCore.Application.csproj" />
+    <ProjectReference Include="..\HotelCore.Infraestructure\HotelCore.Infraestructure.csproj" />
+    <ProjectReference Include="..\HotelCore.IOC\HotelCore.IOC.csproj" />
+    <ProjectReference Include="..\HotelCore.Persistence\HotelCore.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
