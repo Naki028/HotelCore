@@ -2,12 +2,6 @@
 using HotelCore.Domain.Interfaces;
 using HotelCore.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace HotelCore.Persistence.Repositories;
 
@@ -26,12 +20,12 @@ public class TarifaRepository : ITarifaRepository
     public async Task<Tarifa?> GetByIdAsync(int id)
         => await _context.Tarifas.FindAsync(id);
 
+    // Busca la tarifa vigente para una categoria en una fecha dada
     public async Task<Tarifa?> ObtenerTarifaVigenteAsync(int categoriaId, DateTime fecha)
         => await _context.Tarifas
-            .FirstOrDefaultAsync(t =>
-                t.CategoriaId == categoriaId &&
-                fecha >= t.VigenciaDesde &&
-                fecha <= t.VigenciaHasta);
+            .Where(t => t.CategoriaId == categoriaId && t.VigenciaDesde <= fecha)
+            .OrderByDescending(t => t.VigenciaDesde)
+            .FirstOrDefaultAsync();
 
     public async Task AddAsync(Tarifa tarifa)
     {

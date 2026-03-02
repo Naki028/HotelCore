@@ -10,6 +10,7 @@
     <PackageReference Include="JWT" Version="11.0.0" />
     <PackageReference Include="MailKit" Version="4.15.0" />
     <PackageReference Include="MimeKit" Version="4.15.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
   </ItemGroup>
 
   <ItemGroup>

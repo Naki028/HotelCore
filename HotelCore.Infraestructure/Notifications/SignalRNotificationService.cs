@@ -12,8 +12,7 @@ public class SignalRNotificationService : INotificationService
 {
     public Task NotificarAsync(string usuarioId, string mensaje)
     {
-        // Simulación básica
-        Console.WriteLine($"Notificación para usuario {usuarioId}: {mensaje}");
+        Console.WriteLine($"Notificacion para usuario {usuarioId}: {mensaje}");
         return Task.CompletedTask;
     }
 }
